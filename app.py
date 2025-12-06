@@ -26,14 +26,6 @@ app.register_blueprint(cart_bp)
 app.register_blueprint(order_bp)
 
 
-# user_db = UserModel()
-# product_db = ProductModel()
-# cart_db = CartModel()
-# cart_item_db = CartItemModel()
-# order_db = OrderModel()
-# order_item_db = OrderItemModel()
-# address_db = AddressModel()
-# inventory_db = InventoryModel()
 
 
 @app.route('/')

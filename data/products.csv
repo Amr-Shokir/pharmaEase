@@ -1,0 +1,31 @@
+product_id,name,description,price,image_url,category,active_ingredients,dosage_form,package_size,requires_prescription,is_popular,is_new_offer,created_at
+1,Pain Relief Extra,Effective relief for headaches.,9.99,pain_relief.jpg,Medication,Ibuprofen,Tablet,20 count,0,1,0,2023-01-01 00:00:00
+2,Glow Vitamin C Serum,Brightens skin.,24.50,serum.jpg,Skin Care,Vitamin C,Serum,30ml,0,1,1,2023-01-01 00:00:00
+3,Herbal Daily Shampoo,Gentle shampoo.,12.00,shampoo.jpg,Hair Care,Aloe Vera,Liquid,500ml,0,0,1,2023-01-05 00:00:00
+4,Multivitamin Complex,Daily immune support.,15.99,vitamins.jpg,Vitamins & Supplements,Multi,Tablet,60 count,0,1,0,2023-01-06 00:00:00
+5,Baby Soft Lotion,For sensitive skin.,8.50,lotion.jpg,Mom & Baby,Chamomile,Lotion,200ml,0,0,0,2023-01-07 00:00:00
+6,Allergy Relief,24 hour non-drowsy.,18.99,allergy.jpg,Medication,Loratadine,Tablet,30 count,0,1,0,2023-01-08 00:00:00
+7,Moisturizing Cream,Deep hydration.,14.00,cream.jpg,Skin Care,Hyaluronic Acid,Cream,50ml,0,1,1,2023-01-09 00:00:00
+8,Anti-Dandruff Shampoo,Controls flakes.,11.50,dandruff.jpg,Hair Care,Zinc,Liquid,400ml,0,0,0,2023-01-10 00:00:00
+9,Omega-3 Fish Oil,Heart health support.,22.00,omega3.jpg,Vitamins & Supplements,Fish Oil,Softgel,90 count,0,1,0,2023-01-11 00:00:00
+10,Diaper Rash Cream,Fast relief.,6.99,diaper.jpg,Mom & Baby,Zinc Oxide,Cream,100g,0,1,0,2023-01-12 00:00:00
+11,Cough Syrup Night,Suppress coughs.,9.50,cough.jpg,Medication,Dextromethorphan,Liquid,150ml,0,1,1,2023-01-13 00:00:00
+12,Facial Cleanser,Gentle foam.,10.99,cleanser.jpg,Skin Care,Salicylic Acid,Foam,200ml,0,1,0,2023-01-14 00:00:00
+13,Hair Conditioner,Smooth and silky.,12.00,conditioner.jpg,Hair Care,Argan Oil,Cream,500ml,0,0,0,2023-01-15 00:00:00
+14,Calcium + D3,Bone health.,13.50,calcium.jpg,Vitamins & Supplements,Calcium,Tablet,100 count,0,0,0,2023-01-16 00:00:00
+15,Baby Wipes,Unscented.,4.50,wipes.jpg,Mom & Baby,Water,Wipes,80 count,0,1,0,2023-01-17 00:00:00
+16,Aspirin Low Dose,Heart regimen.,5.99,aspirin.jpg,Medication,Aspirin,Tablet,100 count,0,0,0,2023-01-18 00:00:00
+17,Sunscreen SPF 50,Broad spectrum.,16.00,sunscreen.jpg,Skin Care,Zinc Oxide,Lotion,100ml,0,1,1,2023-01-19 00:00:00
+18,Hair Gel,Strong hold.,7.99,hairgel.jpg,Hair Care,Polymer,Gel,150ml,0,0,0,2023-01-20 00:00:00
+19,Probiotics Daily,Digestive health.,28.99,probiotic.jpg,Vitamins & Supplements,Lactobacillus,Capsule,30 count,0,1,0,2023-01-21 00:00:00
+20,Baby Shampoo,Tear free.,5.99,babyshampoo.jpg,Mom & Baby,Lavender,Liquid,300ml,0,1,0,2023-01-22 00:00:00
+21,Antacid Tablets,Heartburn relief.,6.50,antacid.jpg,Medication,Calcium Carb,Tablet,50 count,0,1,0,2023-01-23 00:00:00
+22,Eye Cream,Reduce puffiness.,29.99,eyecream.jpg,Skin Care,Retinol,Cream,15ml,0,1,1,2023-01-24 00:00:00
+23,Hair Mask,Deep repair.,19.00,hairmask.jpg,Hair Care,Keratin,Cream,200ml,0,0,0,2023-01-25 00:00:00
+24,Magnesium,Muscle recovery.,11.99,magnesium.jpg,Vitamins & Supplements,Magnesium,Tablet,60 count,0,0,0,2023-01-26 00:00:00
+25,Teething Gel,Soothing relief.,8.99,teething.jpg,Mom & Baby,Benzocaine,Gel,15g,0,1,0,2023-01-27 00:00:00
+26,Nasal Spray,Clear congestion.,7.50,nasal.jpg,Medication,Oxymetazoline,Spray,30ml,0,1,0,2023-01-28 00:00:00
+27,Toner,Balance pH.,13.00,toner.jpg,Skin Care,Rose Water,Liquid,200ml,0,0,0,2023-01-29 00:00:00
+28,Dry Shampoo,Refresh hair.,9.00,dryshampoo.jpg,Hair Care,Starch,Spray,150ml,0,1,0,2023-01-30 00:00:00
+29,Iron Supplement,Energy boost.,10.50,iron.jpg,Vitamins & Supplements,Iron,Tablet,50 count,0,0,0,2023-01-31 00:00:00
+30,Nursing Pads,Comfortable protection.,12.99,nursingpads.jpg,Mom & Baby,Cotton,Pad,60 count,0,0,0,2023-02-01 00:00:00

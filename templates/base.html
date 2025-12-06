@@ -9,11 +9,20 @@
 </head>
 <body class="{% block body_class %}{% endblock %}">
 
+    {% block navbar %}
     {% if not hide_nav %}
     <nav class="navbar">
         <a href="/" class="logo">
             <i class="fas fa-clinic-medical"></i> PharmaEase
         </a>
+
+        <form action="{{ url_for('product_routes.list_products') }}" method="GET" class="search-bar">
+            <input type="text" name="q" placeholder="Search products, categories..." class="search-input" value="{{ request.args.get('q', '') }}">
+            <button type="submit" class="search-btn">
+                <i class="fas fa-search"></i>
+            </button>
+        </form>
+
         <div class="nav-links">
             <a href="{{ url_for('product_routes.list_products') }}">Shop</a>
             
@@ -22,14 +31,19 @@
                     <i class="fas fa-shopping-cart"></i> Cart
                 </a>
                 <a href="{{ url_for('user_routes.view_profile') }}">Profile</a>
-                <a href="{{ url_for('user_routes.login') }}">Logout</a> {% else %}
+                <a href="{{ url_for('user_routes.logout') }}">Logout</a> {% else %}
                 <a href="{{ url_for('user_routes.login') }}">Login</a>
                 <a href="{{ url_for('user_routes.register') }}" class="btn btn-primary" style="color: white; margin-left: 10px;">Sign Up</a>
             {% endif %}
         </div>
     </nav>
     {% endif %}
+    {% endblock %}
 
+
+
+
+    
     <div class="container">
         {% with messages = get_flashed_messages(with_categories=true) %}
             {% if messages %}
@@ -41,6 +55,21 @@
 
         {% block content %}{% endblock %}
     </div>
+    
+
+    {% block footer %}
+    <footer class="site-footer">
+        <div class="footer-text">
+            &copy; 2023 ShopEase Pharmacy. All rights reserved.
+        </div>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Support</a>
+        </div>
+    </footer>
+    {% endblock %}
+
 
 </body>
 </html>

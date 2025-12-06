@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product List - ShopEase</title>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h1>Product List</h1>
+      <a href="/" class="btn btn-secondary mb-3">Home</a>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price ($)</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for product in products %}
+          <tr>
+            <td>{{ product.id }}</td>
+            <td>{{ product.name }}</td>
+            <td>{{ "%.2f"|format(product.price) }}</td>
+            <td>
+              <a
+                href="{{ url_for('product.view_product', id=product.id) }}"
+                class="btn btn-primary btn-sm"
+              >
+                View
+              </a>
+            </td>
+          </tr>
+          {% else %}
+          <tr>
+            <td colspan="4">No products found.</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

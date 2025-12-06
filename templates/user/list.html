@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User List</title>
+  </head>
+  <body>
+    <h1>All Users</h1>
+    <a href="/" class="btn btn-secondary mb-3">Home</a>
+    <ul>
+      {% for u in users %}
+      <li><a href="/users/{{ u.id }}">{{ u.name }}</a></li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>

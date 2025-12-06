@@ -9,7 +9,6 @@ from repositories.address_repository import AddressRepository
 
 order_bp = Blueprint('order_routes', __name__, url_prefix='/order')
 
-# Initialize Repositories
 order_repo = OrderRepository()
 order_item_repo = OrderItemRepository()
 cart_repo = CartRepository()
@@ -52,8 +51,23 @@ def checkout():
 @order_bp.route('/place', methods=['POST'])
 def place_order():
     user_id = session.get('user_id')
-    shipping_address_id = request.form.get('address_id')
     
+    address_selection = request.form.get('address_id')
+    shipping_address_id = address_selection
+
+    if address_selection == 'new':
+        new_address = {
+            'user_id': user_id,
+            'AddressTitle': request.form.get('new_title'),
+            'AddressLine1': request.form.get('new_line1'),
+            'City': request.form.get('new_city'),
+            'State': request.form.get('new_state'),
+            'ZipCode': request.form.get('new_zip'),
+            'IsDefault': '0'
+        }
+        created_addr = address_repo.create_address(new_address)
+        shipping_address_id = created_addr['AddressID']
+
     cart = cart_repo.get_active_cart_by_user(user_id)
     cart_items = cart_item_repo.get_items_by_cart_id(cart['cart_id'])
     
@@ -72,8 +86,7 @@ def place_order():
             'price_at_purchase': price
         })
 
-    total_amount = subtotal + 10.00 # + Shipping
-
+    total_amount = subtotal + 10.00
 
     new_order = order_repo.create_order(
         user_id=user_id,
@@ -91,8 +104,9 @@ def place_order():
             quantity=item['quantity'],
             price=item['price_at_purchase']
         )
+        inventory_repo.decrease_stock(item['product_id'], item['quantity'])
+
     cart_item_repo.delete_items_by_cart_id(cart['cart_id'])
-    inventory_repo.decrease_stock(item['product_id'], item['quantity'])
 
     return redirect(url_for('order_routes.confirmation', order_id=order_id))
 

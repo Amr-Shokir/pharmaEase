@@ -66,3 +66,38 @@ class CSVModel:
             writer = csv.DictWriter(file, fieldnames=fieldnames)
             writer.writeheader()
             writer.writerows(self.records)
+
+
+
+    def update(self, record_id, updated_fields):
+        if not self.primary_key:
+            return False
+            
+        target_id_str = str(record_id)
+        record_found = False
+
+        for record in self.records:
+            if record.get(self.primary_key) == target_id_str:
+                # Update only the fields provided in updated_fields
+                record.update(updated_fields)
+                record_found = True
+                break
+        
+        if record_found:
+            self.save_to_file()
+            return True
+        return False
+
+    def delete(self, record_id):
+        if not self.primary_key:
+            return False
+
+        target_id_str = str(record_id)
+        initial_count = len(self.records)
+        
+        self.records = [r for r in self.records if r.get(self.primary_key) != target_id_str]
+        
+        if len(self.records) < initial_count:
+            self.save_to_file()
+            return True
+        return False

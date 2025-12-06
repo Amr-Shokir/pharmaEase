@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <div style="max-width: 600px; margin: 0 auto; background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+        
+        <h1 style="text-align: center; margin-bottom: 2rem; color: #407BFF;">My Profile</h1>
+        
+        <div style="margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid #eee;">
+            <label style="color: #666; font-size: 0.9rem; display: block; margin-bottom: 5px;">Username</label>
+            <div style="font-size: 1.2rem; font-weight: bold;">{{ user.username }}</div>
+        </div>
+
+        <div style="margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid #eee;">
+            <label style="color: #666; font-size: 0.9rem; display: block; margin-bottom: 5px;">Email Address</label>
+            <div style="font-size: 1.2rem;">{{ user.email }}</div>
+        </div>
+
+        <div style="margin-bottom: 2rem;">
+            <label style="color: #666; font-size: 0.9rem; display: block; margin-bottom: 5px;">Member Since</label>
+            <div style="font-size: 1.1rem;">{{ user.created_at }}</div>
+        </div>
+
+        <div style="display: flex; gap: 10px; justify-content: center;">
+            <a href="{{ url_for('product_routes.list_products') }}" class="btn btn-secondary" style="background-color: #6c757d; color: white;">Back to Shop</a>
+            <a href="{{ url_for('user_routes.login') }}" class="btn btn-danger">Logout</a>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

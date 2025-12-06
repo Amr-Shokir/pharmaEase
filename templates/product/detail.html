@@ -1,27 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <div class="container mt-5">
-      <h1>{{ product.name }} - ShopEase</h1>
-      <a
-        href="{{ url_for('product.list_products') }}"
-        class="btn btn-secondary mb-3"
-        >Back to Products</a
-      >
-      <div class="card">
-        <div class="card-body">
-          <h4 class="card-title">{{ product.name }}</h4>
-          <p class="card-text"><strong>ID:</strong> {{ product.id }}</p>
-          <p class="card-text">
-            <strong>Price:</strong> ${{ "%.2f"|format(product.price) }}
-          </p>
-        </div>
-      </div>
+{% extends "base.html" %}
+
+{% block content %}
+<a href="{{ url_for('product_routes.list_products') }}" style="color: #666; text-decoration: none; margin-bottom: 1rem; display: inline-block;">
+    &larr; Back to Catalog
+</a>
+
+<div class="detail-container">
+    <div class="detail-image">
+        <img src="{{ url_for('static', filename='images/' + product.image_url) }}" 
+             alt="{{ product.name }}"
+             onerror="this.src='https://via.placeholder.com/400?text=No+Image'">
     </div>
-  </body>
-</html>
+    
+    <div class="detail-info">
+        <span class="stock-badge">In Stock: {{ quantity }} units</span>
+        <h1 style="margin-bottom: 1rem;">{{ product.name }}</h1>
+        <h2 class="product-price" style="font-size: 2rem;">${{ "%.2f"|format(product.price|float) }}</h2>
+        
+        <p style="margin-bottom: 2rem; color: #555;">{{ product.description }}</p>
+        
+        <hr style="border: 0; border-top: 1px solid #eee; margin-bottom: 2rem;">
+        
+        <form action="{{ url_for('cart_routes.add_to_cart', product_id=product.product_id) }}" method="POST">
+            <div class="form-group">
+                <label>Quantity</label>
+                <select name="quantity" class="form-control" style="width: 100px; display: inline-block;">
+                    {% for i in range(1, 6) %}
+                    <option value="{{ i }}">{{ i }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary" style="padding: 12px 30px;">Add to Cart</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,11 +1,11 @@
 from flask import Blueprint, render_template, request
 from repositories.product_repository import ProductRepository 
-
+from repositories.inventory_repository import InventoryRepository
 
 product_bp = Blueprint('product_routes', __name__, url_prefix='/')
 
 product_repo = ProductRepository()
-
+inventory_repo = InventoryRepository()
 
 
 @product_bp.route('/')
@@ -34,7 +34,10 @@ def view_product(product_id):
     if not product:
         return "Product Not Found", 404
 
+    stock_record = inventory_repo.get_stock_by_product_id(product_id)
+    quantity = int(stock_record['quantity_in_stock']) if stock_record else 0
     
     return render_template('product/detail.html', 
-                           product=product) 
+                           product=product, 
+                           quantity=quantity)
     

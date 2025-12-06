@@ -1,2 +1,31 @@
 user_id,username,email,password_hash,first_name,last_name,phone_number,created_at
-
+1,john_doe,john@example.com,pass123,John,Doe,1234567890,2023-01-01 10:00:00
+2,jane_smith,jane@test.com,pass123,Jane,Smith,0987654321,2023-01-02 11:00:00
+3,mike_jones,mike@example.com,pass123,Mike,Jones,1112223333,2023-01-03 12:00:00
+4,sarah_connor,sarah@skynet.com,pass123,Sarah,Connor,4445556666,2023-01-04 09:30:00
+5,bruce_wayne,bruce@wayne.com,pass123,Bruce,Wayne,7778889999,2023-01-05 20:00:00
+6,clark_kent,clark@dailyplanet.com,pass123,Clark,Kent,1231231234,2023-01-06 08:00:00
+7,diana_prince,diana@themyscira.com,pass123,Diana,Prince,3213214321,2023-01-07 14:00:00
+8,peter_parker,peter@bugle.com,pass123,Peter,Parker,5555555555,2023-01-08 16:00:00
+9,tony_stark,tony@stark.com,pass123,Tony,Stark,9999999999,2023-01-09 10:00:00
+10,natasha_romanoff,nat@shield.gov,pass123,Natasha,Romanoff,1010101010,2023-01-10 11:00:00
+11,steve_rogers,steve@avengers.com,pass123,Steve,Rogers,2020202020,2023-01-11 07:00:00
+12,bruce_banner,hulk@smash.com,pass123,Bruce,Banner,3030303030,2023-01-12 13:00:00
+13,wade_wilson,deadpool@tacos.com,pass123,Wade,Wilson,4040404040,2023-01-13 15:00:00
+14,matt_murdock,daredevil@law.com,pass123,Matt,Murdock,5050505050,2023-01-14 18:00:00
+15,jessica_jones,jessica@alias.com,pass123,Jessica,Jones,6060606060,2023-01-15 19:00:00
+16,luke_cage,luke@harlem.com,pass123,Luke,Cage,7070707070,2023-01-16 21:00:00
+17,danny_rand,ironfist@kunlun.com,pass123,Danny,Rand,8080808080,2023-01-17 22:00:00
+18,frank_castle,punisher@justice.com,pass123,Frank,Castle,9090909090,2023-01-18 23:00:00
+19,nick_fury,fury@shield.gov,pass123,Nick,Fury,1212121212,2023-01-19 06:00:00
+20,maria_hill,hill@shield.gov,pass123,Maria,Hill,3434343434,2023-01-20 08:30:00
+21,phil_coulson,coulson@tahiti.com,pass123,Phil,Coulson,5656565656,2023-01-21 09:00:00
+22,melinda_may,cavalry@shield.gov,pass123,Melinda,May,7878787878,2023-01-22 10:30:00
+23,daisy_johnson,quake@shield.gov,pass123,Daisy,Johnson,9090909090,2023-01-23 11:30:00
+24,fitz_simmons,science@shield.gov,pass123,Leo,Fitz,1234567890,2023-01-24 12:30:00
+25,jemma_simmons,bio@shield.gov,pass123,Jemma,Simmons,0987654321,2023-01-25 13:30:00
+26,grant_ward,ward@hydra.com,pass123,Grant,Ward,1357924680,2023-01-26 14:30:00
+27,bobbi_morse,mockingbird@shield.gov,pass123,Bobbi,Morse,2468013579,2023-01-27 15:30:00
+28,lance_hunter,hunter@mercenary.com,pass123,Lance,Hunter,1122334455,2023-01-28 16:30:00
+29,alphonso_mack,mack@shield.gov,pass123,Alphonso,Mack,6677889900,2023-01-29 17:30:00
+30,yo_yo_rodriguez,yoyo@shield.gov,pass123,Elena,Rodriguez,5544332211,2023-01-30 18:30:00

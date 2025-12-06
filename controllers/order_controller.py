@@ -102,7 +102,7 @@ def place_order():
             order_id=order_id,
             product_id=item['product_id'],
             quantity=item['quantity'],
-            price=item['price_at_purchase']
+            price_at_purchase=item['price_at_purchase']
         )
         inventory_repo.decrease_stock(item['product_id'], item['quantity'])
 

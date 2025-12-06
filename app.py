@@ -1,31 +1,20 @@
+from flask import Flask, redirect, url_for
 
-from flask import Flask, render_template, request, redirect, url_for
-
-# Import all models
-from models.user_model import UserModel
-from models.product_model import ProductModel
-from models.cart_model import CartModel, CartItemModel
-from models.order_model import OrderModel, OrderItemModel
-from models.address_model import AddressModel
-from models.inventory_model import InventoryModel
-
-
-# import all controllers
+# Import the Blueprints (Controllers) we created
 from controllers.user_controller import user_bp
 from controllers.product_controller import product_bp
 from controllers.cart_controller import cart_bp
 from controllers.order_controller import order_bp
 
 app = Flask(__name__)
-app.secret_key = 'some_secret_key'
 
-# Register Blueprints
+app.secret_key = 'shopease_secret_key_123'
+
+
 app.register_blueprint(user_bp)
 app.register_blueprint(product_bp)
 app.register_blueprint(cart_bp)
 app.register_blueprint(order_bp)
-
-
 
 
 @app.route('/')

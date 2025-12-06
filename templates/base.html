@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopEase</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="{% block body_class %}{% endblock %}">
+
+    {% if not hide_nav %}
+    <nav class="navbar">
+        <a href="/" class="logo">
+            <i class="fas fa-clinic-medical"></i> PharmaEase
+        </a>
+        <div class="nav-links">
+            <a href="{{ url_for('product_routes.list_products') }}">Shop</a>
+            
+            {% if session.get('user_id') %}
+                <a href="{{ url_for('cart_routes.view_cart') }}">
+                    <i class="fas fa-shopping-cart"></i> Cart
+                </a>
+                <a href="{{ url_for('user_routes.view_profile') }}">Profile</a>
+                <a href="{{ url_for('user_routes.login') }}">Logout</a> {% else %}
+                <a href="{{ url_for('user_routes.login') }}">Login</a>
+                <a href="{{ url_for('user_routes.register') }}" class="btn btn-primary" style="color: white; margin-left: 10px;">Sign Up</a>
+            {% endif %}
+        </div>
+    </nav>
+    {% endif %}
+
+    <div class="container">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert {{ category }}">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        {% block content %}{% endblock %}
+    </div>
+
+</body>
+</html>

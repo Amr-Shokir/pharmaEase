@@ -31,3 +31,5 @@ order_item_id,order_id,product_id,quantity,price_at_purchase
 30,30,30,1,12.99
 31,36,22,1,29.99
 32,36,3,4,12.0
+33,37,2,1,24.5
+34,37,23,1,19.0

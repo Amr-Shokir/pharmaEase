@@ -349,4 +349,156 @@ body.auth-page {
 
 
 
+/* --- FOOTER --- */
+/* Pushes footer to the bottom even on short pages */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
 
+.container {
+    flex: 1; /* Takes up all available space */
+}
+
+.site-footer {
+    background-color: var(--white);
+    padding: 1.5rem 2rem;
+    border-top: 1px solid #eee;
+    margin-top: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text-grey);
+    font-size: 0.9rem;
+}
+
+.footer-links a {
+    color: var(--text-grey);
+    text-decoration: none;
+    margin-left: 15px;
+}
+
+.footer-links a:hover {
+    color: var(--primary-blue);
+}
+
+/* --- PROFILE DASHBOARD --- */
+.profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.profile-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Left Sidebar, Right Content */
+    gap: 2rem;
+}
+
+.profile-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    margin-bottom: 1.5rem;
+}
+
+.profile-card h3 {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    color: var(--primary-blue);
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+}
+
+.info-label {
+    font-weight: 600;
+    color: #555;
+}
+
+.order-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.order-table th, .order-table td {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+}
+
+.status-badge {
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+.status-Delivered { background: #d4edda; color: #155724; }
+.status-Processing { background: #fff3cd; color: #856404; }
+.status-Shipped { background: #cce5ff; color: #004085; }
+.status-Cancelled { background: #f8d7da; color: #721c24; }
+
+
+
+/* --- SEARCH BAR --- */
+.search-bar {
+    display: flex;
+    flex: 1;             
+    max-width: 500px;    
+    margin: 0 2rem;      
+}
+
+.search-input {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-right: none;  /* Remove border between input and button */
+    border-radius: 20px 0 0 20px;
+    outline: none;
+    font-size: 0.95rem;
+}
+
+.search-input:focus {
+    border-color: var(--primary-blue);
+}
+
+.search-btn {
+    background-color: var(--primary-blue);
+    color: white;
+    border: 1px solid var(--primary-blue);
+    padding: 0 20px;
+    border-radius: 0 20px 20px 0;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.search-btn:hover {
+    background-color: var(--primary-dark);
+}
+
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .search-bar {
+        width: 100%;
+        margin: 0;
+        max-width: 100%;
+    }
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+        display: flex;
+    }
+}

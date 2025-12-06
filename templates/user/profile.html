@@ -1,31 +1,101 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="container">
-    <div style="max-width: 600px; margin: 0 auto; background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
-        
-        <h1 style="text-align: center; margin-bottom: 2rem; color: #407BFF;">My Profile</h1>
-        
-        <div style="margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid #eee;">
-            <label style="color: #666; font-size: 0.9rem; display: block; margin-bottom: 5px;">Username</label>
-            <div style="font-size: 1.2rem; font-weight: bold;">{{ user.username }}</div>
-        </div>
-
-        <div style="margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid #eee;">
-            <label style="color: #666; font-size: 0.9rem; display: block; margin-bottom: 5px;">Email Address</label>
-            <div style="font-size: 1.2rem;">{{ user.email }}</div>
-        </div>
-
-        <div style="margin-bottom: 2rem;">
-            <label style="color: #666; font-size: 0.9rem; display: block; margin-bottom: 5px;">Member Since</label>
-            <div style="font-size: 1.1rem;">{{ user.created_at }}</div>
-        </div>
-
-        <div style="display: flex; gap: 10px; justify-content: center;">
-            <a href="{{ url_for('product_routes.list_products') }}" class="btn btn-secondary" style="background-color: #6c757d; color: white;">Back to Shop</a>
-            <a href="{{ url_for('user_routes.login') }}" class="btn btn-danger">Logout</a>
-        </div>
-
+<div class="profile-header">
+    <div>
+        <h1>Welcome, {{ user.first_name or user.username }}</h1>
+        <p style="color: #666;">Manage your account and view orders</p>
     </div>
+    <div>
+        <a href="{{ url_for('user_routes.edit_profile') }}" class="btn btn-primary">
+            <i class="fas fa-edit"></i> Edit Profile
+        </a>
+        <a href="{{ url_for('user_routes.login') }}" class="btn btn-danger" style="margin-left: 10px;">Logout</a>
+    </div>
+</div>
+
+<div class="profile-grid">
+    
+    <div class="left-col">
+        <div class="profile-card">
+            <h3>Personal Information</h3>
+            <div class="info-row">
+                <span class="info-label">Username:</span>
+                <span>{{ user.username }}</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Email:</span>
+                <span>{{ user.email }}</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Phone:</span>
+                <span>{{ user.phone_number or 'Not set' }}</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Joined:</span>
+                <span>{{ user.created_at[:10] }}</span>
+            </div>
+        </div>
+
+        <div class="profile-card">
+            <h3>Address Book</h3>
+            {% if addresses %}
+                {% for addr in addresses %}
+                <div style="background: #f8f9fa; padding: 10px; border-radius: 6px; margin-bottom: 10px; border: 1px solid #eee;">
+                    <strong>{{ addr.AddressTitle }}</strong>
+                    <p style="font-size: 0.9rem; margin: 5px 0; color: #555;">
+                        {{ addr.AddressLine1 }}, {{ addr.City }}
+                    </p>
+                </div>
+                {% endfor %}
+            {% else %}
+                <p style="color: #888; font-style: italic;">No addresses saved.</p>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="right-col">
+        <div class="profile-card">
+            <h3>Order History</h3>
+            
+            {% if orders %}
+            <table class="order-table">
+                <thead>
+                    <tr>
+                        <th>Order #</th>
+                        <th>Date</th>
+                        <th>Total</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for order in orders %}
+                    <tr>
+                        <td>#{{ order.order_id }}</td>
+                        <td>{{ order.created_at[:10] }}</td>
+                        <td>${{ "%.2f"|format(order.total_amount|float) }}</td>
+                        <td>
+                            <span class="status-badge status-{{ order.order_status }}">
+                                {{ order.order_status }}
+                            </span>
+                        </td>
+                        <td>
+                            <a href="{{ url_for('order_routes.confirmation', order_id=order.order_id) }}" 
+                               style="color: var(--primary-blue); font-size: 0.85rem;">View</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% else %}
+            <div style="text-align: center; padding: 2rem;">
+                <p style="color: #666;">You haven't placed any orders yet.</p>
+                <a href="{{ url_for('product_routes.list_products') }}" class="btn btn-primary" style="margin-top: 10px;">Start Shopping</a>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
 </div>
 {% endblock %}

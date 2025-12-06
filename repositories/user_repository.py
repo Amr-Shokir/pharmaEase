@@ -24,3 +24,7 @@ class UserRepository:
             'password_hash': password
         }
         return self.db.create(new_user)
+    
+
+    def update_user(self, user_id, update_data):
+        return self.db.update(user_id, update_data)

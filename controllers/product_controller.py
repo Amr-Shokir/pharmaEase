@@ -1,8 +1,11 @@
 from flask import Blueprint, render_template, request
 from repositories.product_repository import ProductRepository 
 from repositories.inventory_repository import InventoryRepository
+import math
 
 product_bp = Blueprint('product_routes', __name__, url_prefix='/')
+
+PRODUCTS_PER_PAGE = 12  # 3 rows * 4 items = 12
 
 product_repo = ProductRepository()
 inventory_repo = InventoryRepository()
@@ -13,18 +16,32 @@ inventory_repo = InventoryRepository()
 def list_products():
     category = request.args.get('category')
     search_term = request.args.get('q')
+    
+    page = request.args.get('page', 1, type=int)
 
     if category:
-        products = product_repo.get_by_category(category) 
+        all_products = product_repo.get_by_category(category) 
     elif search_term:
-        products = product_repo.search_products(search_term) 
+        all_products = product_repo.search_products(search_term) 
     else:
-        products = product_repo.get_all() 
+        all_products = product_repo.get_all() 
 
-    
+    total_products = len(all_products)
+    total_pages = math.ceil(total_products / PRODUCTS_PER_PAGE)
+
+    if page < 1: page = 1
+    if page > total_pages and total_pages > 0: page = total_pages
+
+    start = (page - 1) * PRODUCTS_PER_PAGE
+    end = start + PRODUCTS_PER_PAGE
+    paginated_products = all_products[start:end]
+
     return render_template('product/catalog.html', 
-                           products=products, 
-                           current_category=category)
+                           products=paginated_products, 
+                           current_category=category,
+                           current_q=search_term,
+                           page=page,
+                           total_pages=total_pages)
 
 
 @product_bp.route('/product/<int:product_id>')

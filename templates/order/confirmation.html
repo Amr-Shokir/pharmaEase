@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div style="text-align: center; padding: 3rem; background: white; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); max-width: 600px; margin: 2rem auto;">
+    
+    <div style="color: #28a745; font-size: 4rem; margin-bottom: 1rem;">
+        <i class="fas fa-check-circle"></i>
+    </div>
+
+    <h1 style="color: #333; margin-bottom: 0.5rem;">Order Placed Successfully!</h1>
+    <p style="color: #666; margin-bottom: 2rem;">Thank you for your purchase. Your order is being processed.</p>
+    
+    <div style="text-align: left; background: #f8f9fa; padding: 1.5rem; border-radius: 8px; border: 1px solid #eee; margin-bottom: 2rem;">
+        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+            <span style="color: #666;">Order ID:</span>
+            <span style="font-weight: bold;">#{{ order.order_id }}</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+            <span style="color: #666;">Date:</span>
+            <span style="font-weight: bold;">{{ order.created_at }}</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+            <span style="color: #666;">Status:</span>
+            <span style="font-weight: bold; color: #007bff;">{{ order.order_status }}</span>
+        </div>
+        <div style="border-top: 1px solid #ddd; margin: 10px 0;"></div>
+        <div style="display: flex; justify-content: space-between; font-size: 1.2rem; font-weight: bold;">
+            <span>Total Amount:</span>
+            <span style="color: #28a745;">${{ "%.2f"|format(order.total_amount|float) }}</span>
+        </div>
+    </div>
+
+    <div style="display: flex; gap: 10px; justify-content: center;">
+        <a href="{{ url_for('product_routes.list_products') }}" class="btn btn-primary">Continue Shopping</a>
+        <a href="{{ url_for('user_routes.view_profile') }}" class="btn btn-secondary" style="background-color: #6c757d; color: white;">View My Profile</a>
+    </div>
+
+</div>
+{% endblock %}

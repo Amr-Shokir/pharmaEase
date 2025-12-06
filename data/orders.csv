@@ -29,3 +29,4 @@ order_id,user_id,shipping_address_id,subtotal,tax_amount,shipping_cost,total_amo
 28,28,28,9.00,0.90,5.00,14.90,Shipped,Cash on Delivery,Paid,2023-11-28 16:30:00
 29,29,29,21.00,2.10,5.00,28.10,Delivered,Cash on Delivery,Paid,2023-11-29 17:30:00
 30,30,30,12.99,1.30,5.00,19.29,Processing,Cash on Delivery,Pending,2023-11-30 18:30:00
+31,4,4,15.99,,,25.990000000000002,Processing,,,

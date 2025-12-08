@@ -36,3 +36,5 @@ order_id,user_id,shipping_address_id,subtotal,tax_amount,shipping_cost,total_amo
 35,22,22,77.99,,,87.99,Processing,,,
 36,22,22,77.99,,,87.99,Processing,,,
 37,22,22,43.5,,,53.5,Processing,,,
+38,9,9,22.0,,,32.0,Processing,,,
+39,29,29,21.0,,,31.0,Processing,,,

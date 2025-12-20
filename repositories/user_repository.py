@@ -1,4 +1,4 @@
-from models.user_model import UserModel
+from ..models.user_model import UserModel
 
 class UserRepository:
     def __init__(self):

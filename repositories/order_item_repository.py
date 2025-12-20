@@ -1,4 +1,4 @@
-from models.order_item_model import OrderItemModel
+from ..models.order_item_model import OrderItemModel
 
 class OrderItemRepository:
     def __init__(self):

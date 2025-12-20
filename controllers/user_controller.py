@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, request, redirect, url_for, session, flash
-from repositories.user_repository import UserRepository
-from repositories.order_repository import OrderRepository
-from repositories.address_repository import AddressRepository
+from ..repositories.user_repository import UserRepository
+from ..repositories.order_repository import OrderRepository
+from ..repositories.address_repository import AddressRepository
 
 user_bp = Blueprint('user_routes', __name__, url_prefix='/user')
 

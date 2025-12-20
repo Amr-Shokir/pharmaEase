@@ -1,4 +1,4 @@
-from models.cart_model import CartModel
+from ..models.cart_model import CartModel
 
 class CartRepository:
     def __init__(self):

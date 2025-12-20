@@ -1,4 +1,4 @@
-from models.address_model import AddressModel
+from ..models.address_model import AddressModel
 
 class AddressRepository:
     def __init__(self):

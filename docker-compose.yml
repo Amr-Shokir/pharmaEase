@@ -1,0 +1,10 @@
+services:
+  web:
+    build: .
+    ports:
+      - "5000:5000"  # Maps port 5000 on your PC to port 5000 in the container
+    volumes:
+      - .:/app       # Syncs your code so changes update immediately
+    environment:
+      - FLASK_ENV=development
+      - FLASK_DEBUG=1

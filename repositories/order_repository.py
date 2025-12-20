@@ -1,4 +1,4 @@
-from models.order_model import OrderModel
+from ..models.order_model import OrderModel
 
 class OrderRepository:
     def __init__(self):

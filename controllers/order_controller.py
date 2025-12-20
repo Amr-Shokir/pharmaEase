@@ -1,11 +1,11 @@
 from flask import Blueprint, render_template, request, redirect, url_for, session, flash
-from repositories.order_repository import OrderRepository
-from repositories.order_item_repository import OrderItemRepository
-from repositories.cart_repository import CartRepository
-from repositories.cart_item_repository import CartItemRepository
-from repositories.product_repository import ProductRepository
-from repositories.inventory_repository import InventoryRepository
-from repositories.address_repository import AddressRepository 
+from ..repositories.order_repository import OrderRepository
+from ..repositories.order_item_repository import OrderItemRepository
+from ..repositories.cart_repository import CartRepository
+from ..repositories.cart_item_repository import CartItemRepository
+from ..repositories.product_repository import ProductRepository
+from ..repositories.inventory_repository import InventoryRepository
+from ..repositories.address_repository import AddressRepository 
 
 order_bp = Blueprint('order_routes', __name__, url_prefix='/order')
 

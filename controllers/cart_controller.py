@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, request, redirect, url_for, session, flash
-from repositories.cart_repository import CartRepository
-from repositories.cart_item_repository import CartItemRepository
-from repositories.product_repository import ProductRepository
+from ..repositories.cart_repository import CartRepository
+from ..repositories.cart_item_repository import CartItemRepository
+from ..repositories.product_repository import ProductRepository
 
 cart_bp = Blueprint('cart_routes', __name__, url_prefix='/cart')
 

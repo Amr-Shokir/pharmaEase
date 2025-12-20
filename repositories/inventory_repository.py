@@ -1,4 +1,4 @@
-from models.inventory_model import InventoryModel
+from ..models.inventory_model import InventoryModel
 
 class InventoryRepository:
     def __init__(self):

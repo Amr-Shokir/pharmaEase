@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request
-from repositories.product_repository import ProductRepository 
-from repositories.inventory_repository import InventoryRepository
+from ..repositories.product_repository import ProductRepository 
+from ..repositories.inventory_repository import InventoryRepository
 import math
 
 product_bp = Blueprint('product_routes', __name__, url_prefix='/')

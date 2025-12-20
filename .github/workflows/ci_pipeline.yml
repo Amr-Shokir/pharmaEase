@@ -1,0 +1,42 @@
+name: CI/CD Pipeline
+
+# Trigger this workflow on push or pull request to main/master branch
+on:
+  push:
+    branches: [ "main", "master", "feature/*" ]
+  pull_request:
+    branches: [ "main", "master" ]
+
+jobs:
+  # JOB 1: RUN UNIT TESTS
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    - name: Set up Python 3.13
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.13'
+
+    - name: Install Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install pytest
+
+    - name: Run Tests
+      run: python -m pytest
+
+  # JOB 2: BUILD DOCKER IMAGE
+  # This only runs if the 'test' job passes
+  build-docker:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    - name: Build Docker Image
+      run: docker build . --file Dockerfile --tag shopease-app:latest

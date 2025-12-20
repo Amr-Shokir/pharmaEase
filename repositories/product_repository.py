@@ -12,16 +12,15 @@ class ProductRepository:
 
     def get_by_category(self, category):
         all_products = self.db.get_all()
-        # List comprehension to filter
         return [p for p in all_products if p.get('category') == category]
 
-    def search_products(self, query):
-        all_products = self.db.get_all()
-        query = query.lower()
-        return [
-            p for p in all_products 
-            if query in p.get('name', '').lower() or query in p.get('description', '').lower()
-        ]
+    # def search_products(self, query):
+    #     all_products = self.db.get_all()
+    #     query = query.lower()
+    #     return [
+    #         p for p in all_products 
+    #         if query in p.get('name', '').lower() or query in p.get('description', '').lower()
+    #     ]
     
     def search_products(self, query):
         all_products = self.db.get_all()
@@ -30,5 +29,5 @@ class ProductRepository:
             p for p in all_products 
             if query in p.get('name', '').lower() 
             or query in p.get('description', '').lower()
-            or query in p.get('category', '').lower()  # <-- ADDED THIS LINE
+            or query in p.get('category', '').lower() 
         ]

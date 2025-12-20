@@ -26,8 +26,9 @@ user_id,username,email,password_hash,first_name,last_name,phone_number,created_a
 25,jemma_simmons,bio@shield.gov,pass123,Jemma,Simmons,0987654321,2023-01-25 13:30:00
 26,grant_ward,ward@hydra.com,pass123,Grant,Ward,1357924680,2023-01-26 14:30:00
 27,bobbi_morse,mockingbird@shield.gov,pass123,Bobbi,Morse,2468013579,2023-01-27 15:30:00
-28,lance_hunter,hunter@mercenary.com,pass123,Lance,Hunter,1122334455,2023-01-28 16:30:00
+28,lance_hunter,hunter@mercenary.com,pass123,Lance1,Hunter2,1122334455,2023-01-28 16:30:00
 29,alphonso_mack,mack@shield.gov,pass123,Alphonso,Mack,6677889900,2023-01-29 17:30:00
 30,yo_yo_rodriguez,yoyo@shield.gov,pass123,Elena,Rodriguez,5544332211,2023-01-30 18:30:00
 31,amr-eissa,amr@example.com,pass123,,,,
 32,amr,amr@example.com,pass123,,,,
+33,amr ,amr@example.com,pass123,,,,

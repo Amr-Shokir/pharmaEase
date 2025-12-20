@@ -7,7 +7,7 @@ class CartRepository:
     def create_cart(self, user_id):
         new_cart = {
             'user_id': user_id,
-            'session_id': 'session_123', # simplified
+            'session_id': 'session_123', 
         }
         return self.db.create(new_cart)
 

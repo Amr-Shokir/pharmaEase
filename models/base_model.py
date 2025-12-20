@@ -1,4 +1,4 @@
-from ..db_singleton import DatabaseHandler # Import the Singleton
+from db_singleton import DatabaseHandler # Import the Singleton
 
 class CSVModel:
     def __init__(self, filename_prefix):

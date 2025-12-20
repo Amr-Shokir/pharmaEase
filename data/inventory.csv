@@ -1,5 +1,5 @@
 inventory_id,product_id,batch_number,expiry_date,quantity_in_stock
-1,1,BATCH001,2025-12-31,100
+1,1,BATCH001,2025-12-31,98
 2,2,BATCH002,2024-06-30,49
 3,3,BATCH003,2026-01-01,196
 4,4,BATCH004,2025-05-20,150

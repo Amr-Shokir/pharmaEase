@@ -41,3 +41,4 @@ order_id,user_id,shipping_address_id,subtotal,tax_amount,shipping_cost,total_amo
 40,28,28,9.0,,,19.0,Processing,,,
 41,1,1,19.98,,,29.98,Processing,,,
 42,11,11,9.5,,,19.5,Processing,,,
+43,1,1,14.0,,,24.0,Processing,,,

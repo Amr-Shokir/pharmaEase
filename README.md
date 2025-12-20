@@ -1,11 +1,11 @@
-# 🛒 ShopEase E-Commerce System
+# 🛒 PharmaEase E-Commerce System
 
-![Build Status](https://github.com/YOUR_USERNAME/YOUR_REPO_NAME/actions/workflows/ci_pipeline.yml/badge.svg)
+![Build Status](https://github.com/Amr-Shokir/pharmaEase/actions/workflows/ci_pipeline.yml/badge.svg)
 ![Python](https://img.shields.io/badge/Python-3.13-blue)
 ![Flask](https://img.shields.io/badge/Flask-2.3-green)
 ![Docker](https://img.shields.io/badge/Docker-Enabled-blue)
 
-**ShopEase** is a robust, scalable e-commerce backend built with **Python Flask**. It features a modular MVC architecture, secure user authentication, and a RESTful API designed for mobile integration. The project follows modern DevOps practices, including **Docker containerization** and an automated **CI/CD pipeline** via GitHub Actions.
+**PharmaEase** is a robust, scalable e-commerce backend built with **Python Flask**. It features a modular MVC architecture, secure user authentication, and a RESTful API designed for mobile integration. The project follows modern DevOps practices, including **Docker containerization** and an automated **CI/CD pipeline** via GitHub Actions.
 
 ---
 

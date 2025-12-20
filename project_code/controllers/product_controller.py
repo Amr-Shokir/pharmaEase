@@ -11,7 +11,7 @@ product_repo = ProductRepository()
 inventory_repo = InventoryRepository()
 
 
-@product_bp.route('/')
+
 @product_bp.route('/products')
 def list_products():
     category = request.args.get('category')

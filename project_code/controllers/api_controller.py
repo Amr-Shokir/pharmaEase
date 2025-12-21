@@ -1,7 +1,7 @@
 from flask import Blueprint, jsonify
 from ..repositories.product_repository import ProductRepository
 
-# We set url_prefix='/api', so all routes here will start with /api
+
 api_bp = Blueprint('api_routes', __name__, url_prefix='/api')
 
 @api_bp.route('/products', methods=['GET'])
@@ -14,7 +14,7 @@ def get_all_products():
         repo = ProductRepository()
         products = repo.get_all()
         
-        # Convert Python Objects -> JSON Dictionary
+        
         products_json = []
         for product in products:
             products_json.append({

@@ -1,16 +1,16 @@
-from ..db_singleton import DatabaseHandler # Import the Singleton
+from ..db_singleton import DatabaseHandler 
 
 class CSVModel:
     def __init__(self, filename_prefix):
         self.filename_prefix = filename_prefix 
         
-        # USE SINGLETON: Get the single instance of the DB Handler
+        
         self.db = DatabaseHandler()
         
         self.records = []
         self.primary_key = None 
 
-        # Delegate file loading to the Singleton
+        
         self.records, fieldnames = self.db.load_data(filename_prefix)
         
         if fieldnames:
@@ -31,7 +31,7 @@ class CSVModel:
     def generate_id(self):
         if not self.records:
             return 1
-        # Filter out empty or malformed IDs just in case
+        
         ids = [int(r[self.primary_key]) for r in self.records if r.get(self.primary_key, '').isdigit()]
         return max(ids) + 1 if ids else 1
 
@@ -76,5 +76,5 @@ class CSVModel:
             return
         fieldnames = list(self.records[0].keys())
         
-        # USE SINGLETON: Delegate saving to the Singleton
+        
         self.db.save_data(self.filename_prefix, self.records, fieldnames)

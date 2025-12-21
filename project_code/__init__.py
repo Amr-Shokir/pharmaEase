@@ -8,17 +8,17 @@ from .controllers.api_controller import api_bp
 def create_app():
     app = Flask(__name__)
     
-    # 1. Update the Secret Key to match the test
+
     app.secret_key = 'shopease_secret_key_123'
 
-    # 2. Register all Blueprints
+ 
     app.register_blueprint(user_bp)
     app.register_blueprint(product_bp)
     app.register_blueprint(cart_bp)
     app.register_blueprint(order_bp)
     app.register_blueprint(api_bp)  
 
-    # 3. Add Cache Control (Optional but good)
+
     @app.after_request
     def add_header(response):
         response.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
@@ -26,7 +26,7 @@ def create_app():
         response.headers["Expires"] = "0"
         return response
 
-    # 4. Update the index route to Redirect
+ 
     @app.route('/')
     def index():
         return redirect(url_for('product_routes.list_products'))
